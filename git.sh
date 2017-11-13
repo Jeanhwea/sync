@@ -13,7 +13,7 @@ function _repo_init(){
 function _update_git(){
 	cd $GIT_DIR
 	echo "==== SYNC git.git START ===="
-	timeout -s INT 3600 git remote -v update
+	timeout -s INT 36000 git remote -v update
 	git repack -a -b -d
 	echo "==== SYNC git.git DONE ===="
 }
