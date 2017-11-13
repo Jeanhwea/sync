@@ -28,5 +28,6 @@ if [[ ! -f "$LINUX_DIR/HEAD" ]]; then
 fi
 
 _update_linux
-_log_linux
+sleep 3
+_log_linu
 

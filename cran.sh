@@ -17,4 +17,5 @@ function _log_cran(){
 }
 
 _sync_cran
+sleep 3
 _log_cran

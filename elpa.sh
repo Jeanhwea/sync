@@ -17,5 +17,6 @@ function _log_elpa(){
 }
 
 _sync_elpa
+sleep 3
 _log_elpa
 

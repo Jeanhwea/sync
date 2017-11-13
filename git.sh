@@ -28,5 +28,6 @@ if [[ ! -f "$GIT_DIR/HEAD" ]]; then
 fi
 
 _update_git
+sleep 3
 _log_git
 
