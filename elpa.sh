@@ -1,10 +1,14 @@
 #!/bin/bash
-
-ROOT="/var/services/homes/hujinghui/Archive/Mirror/"
 HERE=`dirname $(realpath $0)`
 
+
 ELPA_URL="rsync://mirrors.tuna.tsinghua.edu.cn/elpa/"
-ELPA_DIR=${ROOT}"elpa"
+ELPA_DIR="$DS_MIRROR_ROOT/elpa"
+
+if [[ ! -d $DS_MIRROR_ROOT ]]; then
+	echo "$DS_MIRROR_ROOT is not exsit!!!"
+	exit -1
+fi
 
 function _sync_elpa(){
 	echo "==== SYNC elpa START ===="

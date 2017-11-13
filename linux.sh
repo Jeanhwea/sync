@@ -1,10 +1,14 @@
 #!/bin/bash
-
-ROOT="/var/services/homes/hujinghui/Archive/Mirror/"
 HERE=`dirname $(realpath $0)`
 
-LINUX_URL="https://mirrors.tuna.tsinghua.edu.cn/git/linux.git"
-LINUX_DIR=${ROOT}"repository/linux.git"
+
+LINUX_URL="https://github.com/torvalds/linux.git"
+LINUX_DIR="$DS_MIRROR_ROOT/repository/linux.git"
+
+if [[ ! -d $DS_MIRROR_ROOT ]]; then
+	echo "$DS_MIRROR_ROOT is not exsit!!!"
+	exit -1
+fi
 
 function _repo_init(){
 	git clone --mirror $LINUX_URL $LINUX_DIR

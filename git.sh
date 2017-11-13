@@ -1,10 +1,14 @@
 #!/bin/bash
-
-ROOT="/var/services/homes/hujinghui/Archive/Mirror/"
 HERE=`dirname $(realpath $0)`
 
+
 GIT_URL="https://github.com/git/git.git"
-GIT_DIR=${ROOT}"repository/git.git"
+GIT_DIR="$DS_MIRROR_ROOT/repository/git.git"
+
+if [ ! -d $DS_MIRROR_ROOT ]; then
+	echo "$DS_MIRROR_ROOT is not exsit!!!"
+	exit -1
+fi
 
 function _repo_init(){
 	git clone --mirror $GIT_URL $GIT_DIR
