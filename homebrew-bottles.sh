@@ -8,7 +8,7 @@ BOTTLES_DIR=${ROOT}"homebrew-bottles"
 
 function _sync_bottles(){
 	echo "==== SYNC homebrew bottles START ===="
-	timeout -s INT 3600 rsync -av $BOTTLES_URL $BOTTLES_DIR
+	timeout -s INT 36000 rsync -av $BOTTLES_URL $BOTTLES_DIR
 	echo "==== SYNC homebrew bottles DONE ===="
 }
 
