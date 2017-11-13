@@ -13,7 +13,7 @@ function _sync_cran(){
 }
 
 function _log_cran(){
-	timeout -s INT 360 du -sh $CRAN_URL > $HERE/log/cran.log
+	timeout -s INT 360 du -sh $CRAN_DIR > $HERE/log/cran.log
 }
 
 _sync_cran
