@@ -3,7 +3,8 @@ HERE=`dirname $(realpath $0)`
 source "$HERE/env.sh"
 
 
-CRAN_URL="rsync://mirrors.tuna.tsinghua.edu.cn/CRAN/"
+# CRAN_URL="rsync://mirrors.tuna.tsinghua.edu.cn/CRAN/"
+CRAN_URL="rsync://cran.r-project.org/CRAN/"
 CRAN_DIR="$DS_MIRROR_ROOT/CRAN"
 
 if [[ ! -d $DS_MIRROR_ROOT ]]; then
