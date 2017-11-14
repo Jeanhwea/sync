@@ -1,16 +1,12 @@
 #!/bin/bash
 HERE=`dirname $(realpath $0)`
-source "$HERE/env.sh"
+source "$HERE/helper.sh"
 
 
 # CRAN_URL="rsync://mirrors.tuna.tsinghua.edu.cn/CRAN/"
 CRAN_URL="rsync://cran.r-project.org/CRAN/"
 CRAN_DIR="$DS_MIRROR_ROOT/CRAN"
-
-if [[ ! -d $DS_MIRROR_ROOT ]]; then
-	echo "$DS_MIRROR_ROOT is not exsit!!!"
-	exit -1
-fi
+CRAN_LOG="$HERE/log/cran.log"
 
 function _sync_cran(){
 	echo "==== SYNC cran START ===="
@@ -18,10 +14,21 @@ function _sync_cran(){
 	echo "==== SYNC cran DONE ===="
 }
 
-function _log_cran(){
-	timeout -s INT 360 du -sh $CRAN_DIR > $HERE/log/cran.log
-}
+
+# main
+STARTTIME=`_current_time`
 
 _sync_cran
 sleep 3
-_log_cran
+SIZE=`_dir_size $CRAN_DIR`
+
+FINISHTIME=`_current_time`
+
+
+cat > $CRAN_LOG << EOF
+from:   $CRAN_URL
+to:     $CRAN_DIR
+size:   $SIZE
+start:  $STARTTIME
+finish: $FINISHTIME
+EOF

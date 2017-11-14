@@ -1,15 +1,11 @@
 #!/bin/bash
 HERE=`dirname $(realpath $0)`
-source "$HERE/env.sh"
+source "$HERE/helper.sh"
 
 
 GIT_URL="https://github.com/git/git.git"
 GIT_DIR="$DS_MIRROR_ROOT/repository/git.git"
-
-if [ ! -d $DS_MIRROR_ROOT ]; then
-	echo "$DS_MIRROR_ROOT is not exsit!!!"
-	exit -1
-fi
+GIT_LOG="$HERE/log/git.log"
 
 function _repo_init(){
 	git clone --mirror $GIT_URL $GIT_DIR
@@ -23,9 +19,9 @@ function _update_git(){
 	echo "==== SYNC git.git DONE ===="
 }
 
-function _log_git(){
-	timeout -s INT 360 du -sh $GIT_DIR > $HERE/log/git.log
-}
+
+# main
+STARTTIME=`_current_time`
 
 if [[ ! -f "$GIT_DIR/HEAD" ]]; then
 	echo "Initializing git.git mirror"
@@ -34,5 +30,15 @@ fi
 
 _update_git
 sleep 3
-_log_git
+SIZE=`_dir_size $GIT_DIR`
 
+FINISHTIME=`_current_time`
+
+
+cat > $GIT_LOG << EOF
+from:   $GIT_URL
+to:     $GIT_DIR
+size:   $SIZE
+start:  $STARTTIME
+finish: $FINISHTIME
+EOF
