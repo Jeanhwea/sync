@@ -1,5 +1,6 @@
 #!/bin/bash
 HERE=`dirname $(realpath $0)`
+source "$HERE/env.sh"
 
 
 GIT_URL="https://github.com/git/git.git"

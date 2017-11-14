@@ -1,5 +1,6 @@
 #!/bin/bash
 HERE=`dirname $(realpath $0)`
+source "$HERE/env.sh"
 
 
 CRAN_URL="rsync://mirrors.tuna.tsinghua.edu.cn/CRAN/"
