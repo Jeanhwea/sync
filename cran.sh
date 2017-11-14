@@ -3,8 +3,8 @@ HERE=`dirname $(realpath $0)`
 source "$HERE/helper.sh"
 
 
-# CRAN_URL="rsync://mirrors.tuna.tsinghua.edu.cn/CRAN/"
-CRAN_URL="rsync://cran.r-project.org/CRAN/"
+CRAN_URL="rsync://mirrors.tuna.tsinghua.edu.cn/CRAN/"
+# CRAN_URL="rsync://cran.r-project.org/CRAN/"
 CRAN_DIR="$DS_MIRROR_ROOT/CRAN"
 CRAN_LOG="$HERE/log/cran.log"
 
