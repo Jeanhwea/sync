@@ -36,9 +36,11 @@ FINISHTIME=`_current_time`
 
 
 cat > $GIT_LOG << EOF
-from:   $GIT_URL
-to:     $GIT_DIR
-size:   $SIZE
-start:  $STARTTIME
-finish: $FINISHTIME
+---
+- from:   $GIT_URL
+  to:     $GIT_DIR
+  size:   $SIZE
+  start:  $STARTTIME
+  finish: $FINISHTIME
+
 EOF

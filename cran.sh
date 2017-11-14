@@ -26,9 +26,11 @@ FINISHTIME=`_current_time`
 
 
 cat > $CRAN_LOG << EOF
-from:   $CRAN_URL
-to:     $CRAN_DIR
-size:   $SIZE
-start:  $STARTTIME
-finish: $FINISHTIME
+---
+- from:   $CRAN_URL
+  to:     $CRAN_DIR
+  size:   $SIZE
+  start:  $STARTTIME
+  finish: $FINISHTIME
+
 EOF
