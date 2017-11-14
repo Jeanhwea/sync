@@ -36,9 +36,11 @@ FINISHTIME=`_current_time`
 
 
 cat > $LINUX_LOG << EOF
-from:   $LINUX_URL
-to:     $LINUX_DIR
-size:   $SIZE
-start:  $STARTTIME
-finish: $FINISHTIME
+---
+- from:   $LINUX_URL
+  to:     $LINUX_DIR
+  size:   $SIZE
+  start:  $STARTTIME
+  finish: $FINISHTIME
+
 EOF
