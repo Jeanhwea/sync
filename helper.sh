@@ -11,6 +11,11 @@ function _dir_size(){
 	du -sh $FOLDER | awk '{ print $1 }'
 }
 
+function _git_remote_url(){
+	FOLDER=$1
+	cd $FOLDER && git remote -v | grep origin | grep fetch | awk '{ print $2 }'
+}
+
 if [[ ! -d $DS_MIRROR_ROOT ]]; then
 	echo "$DS_MIRROR_ROOT is not exsit!!!"
 	exit -1

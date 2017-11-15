@@ -3,7 +3,9 @@ HERE=`dirname $(realpath $0)`
 source "$HERE/helper.sh"
 
 
-LINUX_URL="https://github.com/torvalds/linux.git"
+# LINUX_URL="https://github.com/torvalds/linux.git"
+# LINUX_URL="git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git"
+LINUX_URL="https://mirrors.tuna.tsinghua.edu.cn/git/linux.git"
 LINUX_DIR="$DS_MIRROR_ROOT/repository/linux.git"
 LINUX_LOG="$HERE/log/linux.log"
 
