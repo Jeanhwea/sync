@@ -23,7 +23,7 @@ SIZE=`_dir_size $BOTTLES_DIR`
 
 FINISHTIME=`_current_time`
 
-cat > $BOTTLES_LOG << EOF
+cat >> $BOTTLES_LOG << EOF
 ---
 - from:   $BOTTLES_URL
   to:     $BOTTLES_DIR

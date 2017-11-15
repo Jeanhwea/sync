@@ -37,7 +37,7 @@ SIZE=`_dir_size $LINUX_DIR`
 FINISHTIME=`_current_time`
 
 
-cat > $LINUX_LOG << EOF
+cat >> $LINUX_LOG << EOF
 ---
 - from:   $LINUX_URL
   to:     $LINUX_DIR

@@ -35,7 +35,7 @@ SIZE=`_dir_size $GIT_DIR`
 FINISHTIME=`_current_time`
 
 
-cat > $GIT_LOG << EOF
+cat >> $GIT_LOG << EOF
 ---
 - from:   $GIT_URL
   to:     $GIT_DIR

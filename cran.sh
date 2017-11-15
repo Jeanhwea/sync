@@ -25,7 +25,7 @@ SIZE=`_dir_size $CRAN_DIR`
 FINISHTIME=`_current_time`
 
 
-cat > $CRAN_LOG << EOF
+cat >> $CRAN_LOG << EOF
 ---
 - from:   $CRAN_URL
   to:     $CRAN_DIR
