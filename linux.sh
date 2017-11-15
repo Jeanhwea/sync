@@ -15,7 +15,7 @@ function _update_linux(){
 	cd $LINUX_DIR
 	echo "==== SYNC linux.git START ===="
 	timeout -s INT 144000 git remote -v update
-	git repack -a -b -d
+	# git repack -a -b -d
 	echo "==== SYNC linux.git DONE ===="
 }
 
