@@ -9,7 +9,7 @@ RUBYGEMS_LOG="$HERE/log/rubygems.log"
 
 function _sync_rubygems(){
 	echo "==== SYNC rubygems START ===="
-	timeout -s INT 7200 rsync -av $RUBYGEMS_URL $RUBYGEMS_DIR
+	timeout -s INT 36000 rsync -av $RUBYGEMS_URL $RUBYGEMS_DIR
 	echo "==== SYNC rubygems DONE ===="
 }
 
