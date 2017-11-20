@@ -7,7 +7,7 @@ ELPA_URL="rsync://mirrors.tuna.tsinghua.edu.cn/elpa/"
 ELPA_DIR="$DS_MIRROR_ROOT/elpa"
 ELPA_LOG="$HERE/log/elpa.log"
 
-function _sync_elpa(){
+function _sync_elpa() {
 	echo "==== SYNC elpa START ===="
 	timeout -s INT 7200 rsync -av $ELPA_URL $ELPA_DIR
 	echo "==== SYNC elpa DONE ===="
@@ -24,11 +24,5 @@ SIZE=`_dir_size $ELPA_DIR`
 FINISHTIME=`_current_time`
 
 cat >> $ELPA_LOG << EOF
----
-- from:   $ELPA_URL
-  to:     $ELPA_DIR
-  size:   $SIZE
-  start:  $STARTTIME
-  finish: $FINISHTIME
-
+$STARTTIME,$FINISHTIME,$SIZE,$ELPA_URL,$ELPA_DIR
 EOF

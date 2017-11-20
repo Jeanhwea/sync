@@ -7,11 +7,11 @@ GIT_URL="https://github.com/git/git.git"
 GIT_DIR="$DS_MIRROR_ROOT/repository/git.git"
 GIT_LOG="$HERE/log/git.log"
 
-function _repo_init(){
+function _repo_init() {
 	git clone --mirror $GIT_URL $GIT_DIR
 }
 
-function _update_git(){
+function _update_git() {
 	cd $GIT_DIR
 	echo "==== SYNC git.git START ===="
 	timeout -s INT 36000 git remote -v update
@@ -36,11 +36,5 @@ FINISHTIME=`_current_time`
 
 
 cat >> $GIT_LOG << EOF
----
-- from:   $GIT_URL
-  to:     $GIT_DIR
-  size:   $SIZE
-  start:  $STARTTIME
-  finish: $FINISHTIME
-
+$STARTTIME,$FINISHTIME,$SIZE,$GIT_URL,$GIT_DIR
 EOF

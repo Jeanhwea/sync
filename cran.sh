@@ -8,7 +8,7 @@ CRAN_URL="rsync://mirrors.tuna.tsinghua.edu.cn/CRAN/"
 CRAN_DIR="$DS_MIRROR_ROOT/CRAN"
 CRAN_LOG="$HERE/log/cran.log"
 
-function _sync_cran(){
+function _sync_cran() {
 	echo "==== SYNC cran START ===="
 	timeout -s INT 21600 rsync -av $CRAN_URL $CRAN_DIR
 	echo "==== SYNC cran DONE ===="
@@ -26,11 +26,5 @@ FINISHTIME=`_current_time`
 
 
 cat >> $CRAN_LOG << EOF
----
-- from:   $CRAN_URL
-  to:     $CRAN_DIR
-  size:   $SIZE
-  start:  $STARTTIME
-  finish: $FINISHTIME
-
+$STARTTIME,$FINISHTIME,$SIZE,$CRAN_URL,$CRAN_DIR
 EOF

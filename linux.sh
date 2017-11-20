@@ -9,11 +9,11 @@ LINUX_URL="https://mirrors.tuna.tsinghua.edu.cn/git/linux.git"
 LINUX_DIR="$DS_MIRROR_ROOT/repository/linux.git"
 LINUX_LOG="$HERE/log/linux.log"
 
-function _repo_init(){
+function _repo_init() {
 	git clone --mirror $LINUX_URL $LINUX_DIR
 }
 
-function _update_linux(){
+function _update_linux() {
 	cd $LINUX_DIR
 	echo "==== SYNC linux.git START ===="
 	timeout -s INT 144000 git remote -v update
@@ -38,11 +38,5 @@ FINISHTIME=`_current_time`
 
 
 cat >> $LINUX_LOG << EOF
----
-- from:   $LINUX_URL
-  to:     $LINUX_DIR
-  size:   $SIZE
-  start:  $STARTTIME
-  finish: $FINISHTIME
-
+$STARTTIME,$FINISHTIME,$SIZE,$LINUX_URL,$LINUX_DIR
 EOF

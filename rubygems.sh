@@ -7,7 +7,7 @@ RUBYGEMS_URL="rsync://mirrors.ustc.edu.cn/rubygems/"
 RUBYGEMS_DIR="$DS_MIRROR_ROOT/rubygems"
 RUBYGEMS_LOG="$HERE/log/rubygems.log"
 
-function _sync_rubygems(){
+function _sync_rubygems() {
 	echo "==== SYNC rubygems START ===="
 	timeout -s INT 36000 rsync -av $RUBYGEMS_URL $RUBYGEMS_DIR
 	echo "==== SYNC rubygems DONE ===="
@@ -24,11 +24,5 @@ SIZE=`_dir_size $RUBYGEMS_DIR`
 FINISHTIME=`_current_time`
 
 cat >> $RUBYGEMS_LOG << EOF
----
-- from:   $RUBYGEMS_URL
-  to:     $RUBYGEMS_DIR
-  size:   $SIZE
-  start:  $STARTTIME
-  finish: $FINISHTIME
-
+$STARTTIME,$FINISHTIME,$SIZE,$RUBYGEMS_URL,$RUBYGEMS_DIR
 EOF
