@@ -8,7 +8,7 @@ function _current_time() {
 
 function _dir_size() {
 	FOLDER=$1
-	du -sh $FOLDER | awk '{ print $1 }'
+	du -s $FOLDER | awk '{ print $1 }'
 }
 
 function _git_remote_url() {
