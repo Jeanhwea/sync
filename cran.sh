@@ -5,7 +5,7 @@ source "$HERE/helper.sh"
 
 CRAN_URL="rsync://mirrors.tuna.tsinghua.edu.cn/CRAN/"
 # CRAN_URL="rsync://cran.r-project.org/CRAN/"
-CRAN_DIR="$DS_MIRROR_ROOT/CRAN"
+CRAN_DIR="$MIRROR/CRAN"
 CRAN_LOG="$HERE/log/cran.log"
 
 function _sync_cran() {

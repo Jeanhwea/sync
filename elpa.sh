@@ -4,7 +4,7 @@ source "$HERE/helper.sh"
 
 
 ELPA_URL="rsync://mirrors.tuna.tsinghua.edu.cn/elpa/"
-ELPA_DIR="$DS_MIRROR_ROOT/elpa"
+ELPA_DIR="$MIRROR/elpa"
 ELPA_LOG="$HERE/log/elpa.log"
 
 function _sync_elpa() {

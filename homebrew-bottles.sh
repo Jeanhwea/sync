@@ -4,7 +4,7 @@ source "$HERE/helper.sh"
 
 
 BOTTLES_URL="rsync://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/"
-BOTTLES_DIR="$DS_MIRROR_ROOT/homebrew-bottles"
+BOTTLES_DIR="$MIRROR/homebrew-bottles"
 BOTTLES_LOG="$HERE/log/homebrew-bottles.log"
 
 function _sync_bottles() {

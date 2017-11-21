@@ -1,6 +1,8 @@
 #!/bin/bash
+HERE=`dirname $(realpath $0)`
+PARENT=`dirname $HERE`
 
-export DS_MIRROR_ROOT="/Volumes/Opossum/mirror"
+export MIRROR=${MIRROR:-"$PARENT"}
 
 function _current_time() {
     date +'%Y-%m-%d %H:%M:%S'
@@ -12,23 +14,22 @@ function _dir_size() {
 }
 
 function _timeout() {
-    if [ -x /usr/local/bin/__timeout ]; then
+    if [ -x /usr/local/bin/timeout ]; then
         gtimeout $*
-    elif [ -x /bin/_timeout ]; then
+    elif [ -x /bin/timeout ]; then
         timeout $*
     else
         echo 'error: command _timeout is not found!!!'
     fi
 }
 
-
 function _git_remote_url() {
     FOLDER=$1
     cd $FOLDER && git remote -v | grep origin | grep fetch | awk '{ print $2 }'
 }
 
-if [[ ! -d $DS_MIRROR_ROOT ]]; then
-    echo "$DS_MIRROR_ROOT is not exsit!!!"
+if [[ ! -d $MIRROR ]]; then
+    echo "$MIRROR is not exsit!!!"
     exit -1
 fi
 

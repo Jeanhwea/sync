@@ -4,7 +4,7 @@ source "$HERE/helper.sh"
 
 
 RUBY_URL="rsync://mirrors.ustc.edu.cn/ruby/"
-RUBY_DIR="$DS_MIRROR_ROOT/ruby"
+RUBY_DIR="$MIRROR/ruby"
 RUBY_LOG="$HERE/log/ruby.log"
 
 function _sync_ruby() {

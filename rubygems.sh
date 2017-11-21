@@ -4,7 +4,7 @@ source "$HERE/helper.sh"
 
 
 RUBYGEMS_URL="rsync://mirrors.ustc.edu.cn/rubygems/"
-RUBYGEMS_DIR="$DS_MIRROR_ROOT/rubygems"
+RUBYGEMS_DIR="$MIRROR/rubygems"
 RUBYGEMS_LOG="$HERE/log/rubygems.log"
 
 function _sync_rubygems() {

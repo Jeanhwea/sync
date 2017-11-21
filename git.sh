@@ -4,7 +4,7 @@ source "$HERE/helper.sh"
 
 
 GIT_URL="https://github.com/git/git.git"
-GIT_DIR="$DS_MIRROR_ROOT/repository/git.git"
+GIT_DIR="$MIRROR/repository/git.git"
 GIT_LOG="$HERE/log/git.log"
 
 function _repo_init() {
