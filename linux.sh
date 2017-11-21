@@ -1,5 +1,5 @@
 #!/bin/bash
-HERE=`dirname $(realpath $0)`
+HERE=`dirname $0`
 source "$HERE/helper.sh"
 
 
