@@ -14,7 +14,7 @@ function _dir_size() {
 }
 
 function _timeout() {
-    if [ -x /usr/local/bin/timeout ]; then
+    if [ -x /usr/local/bin/gtimeout ]; then
         gtimeout $*
     elif [ -x /bin/timeout ]; then
         timeout $*
