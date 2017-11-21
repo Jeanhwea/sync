@@ -15,9 +15,9 @@ function _dir_size() {
 
 function _timeout() {
     if [ -x /usr/local/bin/gtimeout ]; then
-        gtimeout $*
+        /usr/local/bin/gtimeout $*
     elif [ -x /bin/timeout ]; then
-        timeout $*
+        /bin/timeout $*
     else
         echo 'error: command _timeout is not found!!!'
     fi
