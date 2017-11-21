@@ -8,9 +8,9 @@ RUBYGEMS_DIR="$DS_MIRROR_ROOT/rubygems"
 RUBYGEMS_LOG="$HERE/log/rubygems.log"
 
 function _sync_rubygems() {
-	echo "==== SYNC rubygems START ===="
-	timeout -s INT 36000 rsync -av $RUBYGEMS_URL $RUBYGEMS_DIR
-	echo "==== SYNC rubygems DONE ===="
+    echo "==== SYNC rubygems START ===="
+    _timeout -s INT 36000 rsync -av $RUBYGEMS_URL $RUBYGEMS_DIR
+    echo "==== SYNC rubygems DONE ===="
 }
 
 

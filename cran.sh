@@ -9,9 +9,9 @@ CRAN_DIR="$DS_MIRROR_ROOT/CRAN"
 CRAN_LOG="$HERE/log/cran.log"
 
 function _sync_cran() {
-	echo "==== SYNC cran START ===="
-	timeout -s INT 21600 rsync -av $CRAN_URL $CRAN_DIR
-	echo "==== SYNC cran DONE ===="
+    echo "==== SYNC cran START ===="
+    _timeout -s INT 21600 rsync -av $CRAN_URL $CRAN_DIR
+    echo "==== SYNC cran DONE ===="
 }
 
 

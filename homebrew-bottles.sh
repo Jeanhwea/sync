@@ -8,9 +8,9 @@ BOTTLES_DIR="$DS_MIRROR_ROOT/homebrew-bottles"
 BOTTLES_LOG="$HERE/log/homebrew-bottles.log"
 
 function _sync_bottles() {
-	echo "==== SYNC homebrew bottles START ===="
-	timeout -s INT 36000 rsync -av $BOTTLES_URL $BOTTLES_DIR
-	echo "==== SYNC homebrew bottles DONE ===="
+    echo "==== SYNC homebrew bottles START ===="
+    _timeout -s INT 36000 rsync -av $BOTTLES_URL $BOTTLES_DIR
+    echo "==== SYNC homebrew bottles DONE ===="
 }
 
 

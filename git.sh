@@ -8,15 +8,15 @@ GIT_DIR="$DS_MIRROR_ROOT/repository/git.git"
 GIT_LOG="$HERE/log/git.log"
 
 function _repo_init() {
-	git clone --mirror $GIT_URL $GIT_DIR
+    git clone --mirror $GIT_URL $GIT_DIR
 }
 
 function _update_git() {
-	cd $GIT_DIR
-	echo "==== SYNC git.git START ===="
-	timeout -s INT 36000 git remote -v update
-	# git repack -a -b -d
-	echo "==== SYNC git.git DONE ===="
+    cd $GIT_DIR
+    echo "==== SYNC git.git START ===="
+    _timeout -s INT 36000 git remote -v update
+    git repack -a -b -d
+    echo "==== SYNC git.git DONE ===="
 }
 
 
@@ -24,8 +24,8 @@ function _update_git() {
 STARTTIME=`_current_time`
 
 if [[ ! -f "$GIT_DIR/HEAD" ]]; then
-	echo "Initializing git.git mirror"
-	_repo_init
+    echo "Initializing git.git mirror"
+    _repo_init
 fi
 
 _update_git
