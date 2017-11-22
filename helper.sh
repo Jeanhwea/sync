@@ -21,7 +21,7 @@ function _timeout() {
     elif [ -x /bin/timeout ]; then
         /bin/timeout $*
     else
-        echo 'error: command _timeout is not found!!!'
+        echo 'error: command timeout is not found!!!'
     fi
 }
 
