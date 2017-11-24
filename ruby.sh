@@ -1,5 +1,5 @@
 #!/bin/bash
-HERE=`dirname $0`
+HERE=`cd $(dirname $0);pwd`
 source "$HERE/helper.sh"
 
 
