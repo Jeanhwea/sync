@@ -10,7 +10,7 @@ function _current_time() {
 
 function _dir_size() {
     FOLDER=$1
-    du -s $FOLDER | awk '{ print $1 }'
+    du -k -s $FOLDER | awk '{ print $1 }'
 }
 
 function _timeout() {
