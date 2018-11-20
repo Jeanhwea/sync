@@ -10,15 +10,15 @@ LINUX_DIR="$MIRROR/repository/linux.git"
 LINUX_LOG="$HERE/log/linux.log"
 
 function _repo_init() {
-    git clone --mirror $LINUX_URL $LINUX_DIR
+  git clone --mirror $LINUX_URL $LINUX_DIR
 }
 
 function _update_linux() {
-    cd $LINUX_DIR
-    echo "==== SYNC linux.git START ===="
-    _timeout -s INT 144000 git remote -v update
-    git repack -a -b -d
-    echo "==== SYNC linux.git DONE ===="
+  cd $LINUX_DIR
+  echo "==== SYNC linux.git START ===="
+  _timeout -s INT 144000 git remote -v update
+  git repack -a -b -d
+  echo "==== SYNC linux.git DONE ===="
 }
 
 
@@ -26,8 +26,8 @@ function _update_linux() {
 STARTTIME=`_current_time`
 
 if [[ ! -f "$LINUX_DIR/HEAD" ]]; then
-    echo "Initializing linux.git mirror"
-    _repo_init
+  echo "Initializing linux.git mirror"
+  _repo_init
 fi
 
 _update_linux

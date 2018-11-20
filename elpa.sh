@@ -8,9 +8,9 @@ ELPA_DIR="$MIRROR/elpa"
 ELPA_LOG="$HERE/log/elpa.log"
 
 function _sync_elpa() {
-    echo "==== SYNC elpa START ===="
-    _timeout -s INT 7200 rsync -av $ELPA_URL $ELPA_DIR
-    echo "==== SYNC elpa DONE ===="
+  echo "==== SYNC elpa START ===="
+  _timeout -s INT 7200 rsync -av $ELPA_URL $ELPA_DIR
+  echo "==== SYNC elpa DONE ===="
 }
 
 
